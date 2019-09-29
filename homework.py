@@ -24,7 +24,7 @@ newkeylist = []
         
 student_encode = webcipher[:-1].split(",")[0:9]
 
-print("==== test each 590610649 -[key]-> cipher-text ====")
+print("///// ENCRYPT TEST ///// test each 590610649 -[key]-> == cipher-text? /////")
 for i in range(len(student_encode)): #590610649
     eachcipher = student_encode[i][2:].zfill(8)
     mycipher = bin(mycode[i])[2:].zfill(8)
@@ -42,7 +42,7 @@ for i in range(len(student_encode)): #590610649
 print("(key in decimal)")
 
 print()
-print("==== test each cipher-text -[key]-> 590610649 ====")
+print("///// DECRYPT TEST ///// test each cipher-text -[key]-> == 590610649? /////")
 for i in range(len(student_encode)): #590610649
     eachcipher = student_encode[i][2:].zfill(8)
     mycipher = bin(mycode[i])[2:].zfill(8)
@@ -50,7 +50,6 @@ for i in range(len(student_encode)): #590610649
     newkeylist = []
     
     for j in range (len(mykeylist)): # 2^10  key
-        
         mybruteforce = sdes.dec(mykeylist[j],eachcipher)
         
         if(mybruteforce == mycipher):
