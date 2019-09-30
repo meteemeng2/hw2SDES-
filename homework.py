@@ -40,6 +40,13 @@ for i in range(len(student_encode)): #590610649
     mykeylist = newkeylist.copy()
 
 
-print(mykeylist)
+print("key = ",mykeylist[0])
 
-    
+for cipher in webcipher[:-1].split(","):
+    cipherfix = cipher[2:].zfill(8)
+    bin_plaintext = sdes.dec(mykeylist[0],cipherfix)
+    each_plaintext = chr(int(bin_plaintext,2))
+    print(each_plaintext,end="")
+
+
+
